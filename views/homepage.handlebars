@@ -1,0 +1,52 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/TeamUpHome.css" rel="stylesheet">
+	<title>Test Page</title>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    	<div class="navbar-header" style="background-color: #ffffff;">
+      		<button type="button" class="navbar-toggle collapsed" style="float: left; border-color: #2b669a; background-color: #333; position: relative; top: 2px; left: 19px" data-toggle="collapse" data-target="#collapse-1">
+	        	<span class="sr-only">Toggle navigation</span>
+	        	<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+      		</button>
+      		<button id="plusIcon" class="btn btn-default btn-md" onclick="window.location.href='addCourse'">+</button>
+
+			<p id="appTitle">TeamUp</p> 
+
+   		</div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    	<div class="collapse navbar-collapse" style="border-color: #2b669a" id="collapse-1">
+    		<ul class="nav navbar-nav">
+    			{{#each courses}}
+                    <li><a href="course/{{title}}">{{title}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </nav>
+
+	<div class="content container-sm">
+		{{#each courses}}
+			<a href="course/{{title}}">
+				<div class="classes" id="{{id}}">
+					<img src="images/chevron.png" alt="chevron icon" class="chevron"/>
+				  <p class="course_title">{{title}}</p>
+				  <p class="professor">{{prof}}</p>
+				</div>
+			</a>
+		{{/each}}
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/handlebars.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
